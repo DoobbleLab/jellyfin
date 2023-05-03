@@ -1,0 +1,10 @@
+.DS_Store
+.env
+*.db
+*.secret
+config/log/
+config/data/
+config/cache/
+config/dlna/
+*.jpg
+*.png

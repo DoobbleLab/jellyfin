@@ -1,0 +1,29 @@
+version: "3.5"
+services:
+  jellyfin-app:
+    image: linuxserver/jellyfin:latest
+    container_name: jellyfin-app
+
+    ports:
+      - 8096:8096
+    volumes:
+      - ./config:/config
+      - ${JELLYFIN_CACHE}:/cache
+      - ${JELLYFIN_MEDIA}:/media
+    restart: "unless-stopped"
+    environment:
+      - JELLYFIN_PublishedServerUrl=${SITE_URL}
+    labels:
+      - flame.type=application
+      - flame.name=Jellyfin
+      - flame.url=${SITE_URL}
+      - flame.category=Medias
+      - flame.icon=multimedia
+
+volumes:
+    jellyfin_cache:
+        name: ${JELLYFIN_CACHE}
+        external: false
+    jellyfin_media:
+        name: ${JELLYFIN_MEDIA}
+        external: false
