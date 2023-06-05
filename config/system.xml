@@ -130,7 +130,7 @@
     </MetadataOptions>
   </MetadataOptions>
   <SkipDeserializationForBasicTypes>true</SkipDeserializationForBasicTypes>
-  <ServerName>lab</ServerName>
+  <ServerName>lab-jellyfin</ServerName>
   <UICulture>en-US</UICulture>
   <SaveMetadataHidden>false</SaveMetadataHidden>
   <ContentTypes />
@@ -139,7 +139,13 @@
   <EnableGroupingIntoCollections>false</EnableGroupingIntoCollections>
   <DisplaySpecialsWithinSeasons>true</DisplaySpecialsWithinSeasons>
   <CodecsUsed />
-  <PluginRepositories />
+  <PluginRepositories>
+    <RepositoryInfo>
+      <Name>Jellyfin Stable</Name>
+      <Url>https://repo.jellyfin.org/releases/plugin/manifest-stable.json</Url>
+      <Enabled>true</Enabled>
+    </RepositoryInfo>
+  </PluginRepositories>
   <EnableExternalContentInSuggestions>true</EnableExternalContentInSuggestions>
   <ImageExtractionTimeoutMs>0</ImageExtractionTimeoutMs>
   <PathSubstitutions />

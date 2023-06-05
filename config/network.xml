@@ -28,7 +28,7 @@
   <RemoteIPFilter />
   <IsRemoteIPFilterBlacklist>false</IsRemoteIPFilterBlacklist>
   <EnableUPnP>false</EnableUPnP>
-  <EnableRemoteAccess>true</EnableRemoteAccess>
+  <EnableRemoteAccess>false</EnableRemoteAccess>
   <LocalNetworkSubnets />
   <LocalNetworkAddresses />
   <KnownProxies />

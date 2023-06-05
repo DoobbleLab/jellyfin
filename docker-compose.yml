@@ -3,13 +3,18 @@ services:
   jellyfin-app:
     image: linuxserver/jellyfin:latest
     container_name: jellyfin-app
-
+    ## FOR HARDWARE ACCELERATION
+    devices:
+      - /dev/dri/renderD128:/dev/dri/renderD128
+      - /dev/dri/card0:/dev/dri/card0
+    ## END FOR HARDWARE ACCELERATION
     ports:
       - 8096:8096
     volumes:
       - ./config:/config
       - ${JELLYFIN_CACHE}:/cache
       - ${JELLYFIN_MEDIA}:/media
+      - ${JELLYFIN_VIDEO_EDITS}:/video_edits
     restart: "unless-stopped"
     environment:
       - JELLYFIN_PublishedServerUrl=${SITE_URL}
@@ -19,6 +24,8 @@ services:
       - flame.url=${SITE_URL}
       - flame.category=Medias
       - flame.icon=multimedia
+    networks:
+      - production_jellyfin
 
 volumes:
     jellyfin_cache:
@@ -27,3 +34,7 @@ volumes:
     jellyfin_media:
         name: ${JELLYFIN_MEDIA}
         external: false
+
+networks:
+    production_jellyfin:
+      driver: bridge
