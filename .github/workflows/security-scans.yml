@@ -34,7 +34,7 @@ jobs:
           category: "filesystem"
           sarif_file: 'trivy-results.sarif'
 
-      - name: Run Trivy vulnerability scanner for container Flame
+      - name: Run Trivy vulnerability scanner for container Jellyfin
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'linuxserver/jellyfin:latest'
